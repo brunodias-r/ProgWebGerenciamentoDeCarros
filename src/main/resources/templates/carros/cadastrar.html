@@ -25,13 +25,13 @@
                     <div class="form-group">
                         <fieldset>
                             <div class="form-group row">
-                                <label for="modeloInput">Modelo</label>
+                                <label style="font-weight: bold;" for="modeloInput">Modelo</label>
                                 <input id="modeloInput" type="text" class="form-control input-sm" 
                                 th:field="*{modelo}" autofocus="autofocus" placeholder="Informe o modelo" maxlength="50" name="" />
                             </div>
 
                             <div class="form-group row">
-                                <label>Fabricantes</label>
+                                <label style="font-weight: bold;">Fabricantes</label>
                                 <select class="form-control" th:field="*{fabricante}">
                                     <option value="">Selecione um fabricante.</option>
                                     <option th:each="fabr:${fabricantes}" th:value="${fabr.id}" th:text="${fabr.nome}"></option>
@@ -39,7 +39,15 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="modeloInput">Chaves</label>
+                                <label style="font-weight: bold;">Documentos</label>
+                                <select class="form-control" th:field="*{documento}">
+                                    <option value="">Selecione um documento.</option>
+                                    <option th:each="doc:${documentos}" th:value="${doc.id}" th:text="${doc.numero}"></option>
+                                </select>
+                            </div>
+
+                            <div class="form-group row">
+                                <label style="font-weight: bold;" for="modeloInput">Chaves</label>
                                 <select class="form-control" th:field="*{chave}">
                                     <option value="">Selecione uma chave.</option>
                                     <option th:each="chav:${chaves}" th:value="${chav.id}" th:text="${chav.codigo}"></option>
@@ -47,7 +55,7 @@
                             </div>
 
                             <div class="form-group row" style="display: flex; flex-direction: column;" >
-                                <label for="modeloInput">Acessórios</label>
+                                <label style="font-weight: bold;" for="modeloInput">Acessórios</label>
                                 <div th:each="objAcessorio: ${acessorios}">
                                     <input style="display: flex; flex-direction: column;" type="checkbox" th:field="*{acessorios}" th:value="${objAcessorio.id}"/>
                                     <label th:text="${objAcessorio.nome}"></label>    

@@ -82,6 +82,4 @@ public class Carro implements Serializable {
 		this.acessorios = acessorios;
 	}
 	
-	
-	
 }

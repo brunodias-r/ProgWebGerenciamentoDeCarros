@@ -24,6 +24,9 @@
                         <tr>
                             <th>ID</th>
                             <th>Modelo</th>
+                            <th>Fabricante</th>
+                            <th>Chave</th>
+                            <th>Documento</th>
                             <th>Ação</th>
                         </tr>
                         </thead>
@@ -31,7 +34,9 @@
                         <tr th:each="carro : ${carros}">
                             <td th:text="${carro.id}"></td>
                             <td th:text="${carro.modelo}"></td>
-                           
+                            <td th:text="${carro.fabricante.nome}"></td>
+                            <td th:text="${carro.chave.codigo}"></td>
+                            <td th:text="${carro.documento.numero}"></td>
                             <td>
                                 <div class="btn-group pull-right">
                                     <a th:href="@{/carros/editar/{id}(id=${carro.id})}" class="btn btn-sm btn-primary">Alterar</a>
@@ -41,6 +46,8 @@
                         </tr>
                         </tbody>
                     </table>
+
+
                 </div>
             </div>
             <div align="left">
